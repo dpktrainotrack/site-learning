@@ -1,146 +1,154 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // 1. Sticky Navbar & Back to Top Button
+  const navbar = document.querySelector(".navbar");
+  const backToTop = document.getElementById("backToTop");
+  const topHeaderElements = document.querySelector(".top-header");
+  let topHeaderHeight = topHeaderElements ? topHeaderElements.offsetHeight : 0;
 
-    // 1. Sticky Navbar & Back to Top Button
-    const navbar = document.querySelector('.navbar');
-    const backToTop = document.getElementById('backToTop');
-    const topHeaderElements = document.querySelector('.top-header');
-    let topHeaderHeight = topHeaderElements ? topHeaderElements.offsetHeight : 0;
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > topHeaderHeight) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+    }
 
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > topHeaderHeight) {
-            navbar.classList.add('sticky');
-        } else {
-            navbar.classList.remove('sticky');
+    // Back to top
+    if (window.scrollY > 300) {
+      backToTop.classList.add("active");
+    } else {
+      backToTop.classList.remove("active");
+    }
+  });
+
+  // 2. Back to Top Click Action
+  if (backToTop) {
+    backToTop.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
+
+  // 3. Smooth Scrolling for Anchor Links inside nav
+  document.querySelectorAll('a.nav-link[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        const headerOffset = 80;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+
+  // 4. Voucher Filtering
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const filterItems = document.querySelectorAll(".filter-item");
+
+  if (filterBtns.length > 0 && filterItems.length > 0) {
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // Remove active from all
+        filterBtns.forEach((b) => b.classList.remove("active", "btn-primary"));
+        filterBtns.forEach((b) => b.classList.add("btn-outline-primary"));
+
+        // Add active to clicked
+        btn.classList.add("active", "btn-primary");
+        btn.classList.remove("btn-outline-primary");
+
+        const filterValue = btn.getAttribute("data-filter");
+
+        filterItems.forEach((item) => {
+          if (
+            filterValue === "all" ||
+            item.getAttribute("data-category") === filterValue
+          ) {
+            item.style.display = "block";
+            // simple animation
+            item.style.animation = "scaleUp 0.3s ease-in-out";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    });
+  }
+
+  // 5. Mega Menu — Two-Panel Hover Functionality
+  const certNavItems = document.querySelectorAll(".cert-nav-item");
+  const certPanels = document.querySelectorAll(".cert-panel");
+
+  if (certNavItems.length > 0 && certPanels.length > 0) {
+    // Determine interaction type based on viewport
+    const isMobile = () => window.innerWidth < 992;
+
+    certNavItems.forEach((item) => {
+      // Hover event for desktop
+      item.addEventListener("mouseenter", function () {
+        if (!isMobile()) {
+          switchPanel(this);
         }
+      });
 
-        // Back to top
-        if (window.scrollY > 300) {
-            backToTop.classList.add('active');
-        } else {
-            backToTop.classList.remove('active');
+      // Click event for mobile (prevent navigation, just switch panel)
+      item.addEventListener("click", function (e) {
+        if (isMobile()) {
+          e.preventDefault();
+          e.stopPropagation();
+          switchPanel(this);
         }
+      });
+
+      // Prevent link click inside mega menu left nav (only hover to preview)
+      item.querySelector("a").addEventListener("click", function (e) {
+        // On desktop, prevent default so hover just previews the panel
+        // User can still navigate via the right-panel course links
+        if (!isMobile()) {
+          e.preventDefault();
+        }
+      });
     });
 
-    // 2. Back to Top Click Action
-    if (backToTop) {
-        backToTop.addEventListener('click', function (e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+    function switchPanel(activeItem) {
+      const targetId = activeItem.getAttribute("data-target");
+      const targetPanel = document.getElementById(targetId);
+      if (!targetPanel || activeItem.classList.contains("active")) return;
+
+      // Update left nav active state
+      certNavItems.forEach((nav) => nav.classList.remove("active"));
+      activeItem.classList.add("active");
+
+      // Switch right panel
+      certPanels.forEach((panel) => {
+        panel.classList.remove("active");
+        panel.style.animation = "none";
+      });
+
+      targetPanel.classList.add("active");
+
+      if (isMobile()) {
+        // On mobile, scroll to the content panel so the user sees the courses
+        targetPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        // On desktop, trigger the slide-in animation
+        void targetPanel.offsetWidth;
+        targetPanel.style.animation = "panelSlideIn 0.3s ease forwards";
+      }
     }
-
-    // 3. Smooth Scrolling for Anchor Links inside nav
-    document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const headerOffset = 80;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                });
-            }
-        });
-    });
-
-    // 4. Voucher Filtering
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const filterItems = document.querySelectorAll('.filter-item');
-
-    if (filterBtns.length > 0 && filterItems.length > 0) {
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active from all
-                filterBtns.forEach(b => b.classList.remove('active', 'btn-primary'));
-                filterBtns.forEach(b => b.classList.add('btn-outline-primary'));
-
-                // Add active to clicked
-                btn.classList.add('active', 'btn-primary');
-                btn.classList.remove('btn-outline-primary');
-
-                const filterValue = btn.getAttribute('data-filter');
-
-                filterItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
-                        // simple animation
-                        item.style.animation = 'scaleUp 0.3s ease-in-out';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-    }
-
-    // 5. Mega Menu — Two-Panel Hover Functionality
-    const certNavItems = document.querySelectorAll('.cert-nav-item');
-    const certPanels = document.querySelectorAll('.cert-panel');
-
-    if (certNavItems.length > 0 && certPanels.length > 0) {
-        // Determine interaction type based on viewport
-        const isMobile = () => window.innerWidth < 992;
-
-        certNavItems.forEach(item => {
-            // Hover event for desktop
-            item.addEventListener('mouseenter', function () {
-                if (!isMobile()) {
-                    switchPanel(this);
-                }
-            });
-
-            // Click event for mobile (prevent navigation, just switch panel)
-            item.addEventListener('click', function (e) {
-                if (isMobile()) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    switchPanel(this);
-                }
-            });
-
-            // Prevent link click inside mega menu left nav (only hover to preview)
-            item.querySelector('a').addEventListener('click', function (e) {
-                // On desktop, prevent default so hover just previews the panel
-                // User can still navigate via the right-panel course links
-                if (!isMobile()) {
-                    e.preventDefault();
-                }
-            });
-        });
-
-        function switchPanel(activeItem) {
-            const targetId = activeItem.getAttribute('data-target');
-            const targetPanel = document.getElementById(targetId);
-            if (!targetPanel || activeItem.classList.contains('active')) return;
-
-            // Update left nav active state
-            certNavItems.forEach(nav => nav.classList.remove('active'));
-            activeItem.classList.add('active');
-
-            // Switch right panel with animation
-            certPanels.forEach(panel => {
-                panel.classList.remove('active');
-                panel.style.animation = 'none';
-            });
-
-            // Trigger reflow for re-animation
-            void targetPanel.offsetWidth;
-            targetPanel.style.animation = 'panelSlideIn 0.3s ease forwards';
-            targetPanel.classList.add('active');
-        }
-    }
-
+  }
 });
 
 // Add keyframes for filtering animation dynamically
-const style = document.createElement('style');
+const style = document.createElement("style");
 style.innerHTML = `
 @keyframes scaleUp {
   from { transform: scale(0.9); opacity: 0; }
@@ -149,77 +157,80 @@ style.innerHTML = `
 `;
 document.head.appendChild(style);
 
-
-
-
-
-$('#itTraningCourses').owlCarousel({
-    loop: true,
-    margin: 20,
-    nav: true,
-    dots: false,
-    autoplay: false,
-    // autoplaySpeed: 12000,
-    // smartSpeed: 12000,
-    // slideTransition: 'linear',
-    autoplayHoverPause: true,
-    navText: [
-        '<i class="fa-solid fa-arrow-left"></i>',
-        '<i class="fa-solid fa-arrow-right"></i>'
-    ],
-    responsive: {
-        0: { items: 1 },
-        600: { items: 2 },
-        1000: { items: 4 }
-    }
+$("#itTraningCourses").owlCarousel({
+  loop: true,
+  margin: 20,
+  nav: true,
+  dots: false,
+  autoplay: false,
+  // autoplaySpeed: 12000,
+  // smartSpeed: 12000,
+  // slideTransition: 'linear',
+  autoplayHoverPause: true,
+  navText: [
+    '<i class="fa-solid fa-arrow-left"></i>',
+    '<i class="fa-solid fa-arrow-right"></i>',
+  ],
+  responsive: {
+    0: { items: 1 },
+    600: { items: 2 },
+    1000: { items: 4 },
+  },
 });
 
-
-$('.testimonial-carousel').owlCarousel({
-    loop: true,
-    margin: 20,
-    autoplay: false,
-    autoplayTimeout: 3000,
-    autoplayHoverPause: true,
-    responsive: {
-        0: { items: 1 },
-        600: { items: 2 },
-        1000: { items: 3 }
-    }
+$(".testimonial-slider").owlCarousel({
+  loop: true,
+  margin: 30,
+  nav: false,
+  dots: true,
+  autoplay: true,
+  autoplayTimeout: 4000,
+  smartSpeed: 900,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    768: {
+      items: 2,
+    },
+    1200: {
+      items: 3,
+    },
+  },
 });
 
-$('.brands-carousel').owlCarousel({
-    loop: true,
-    margin: 30,
-    nav: false,
-    dots: false,
-    autoplay: true,
-    // autoplayTimeout: 1, 
-    autoplaySpeed: 10000,
-    smartSpeed: 10000,
-    slideTransition: 'linear',
-    autoplayHoverPause: false,
-    responsive: {
-        0: { items: 2 },
-        576: { items: 3 },
-        768: { items: 4 },
-        992: { items: 5 },
-        1200: { items: 6 }
-    }
+$(".brands-carousel").owlCarousel({
+  loop: true,
+  margin: 30,
+  nav: false,
+  dots: false,
+  autoplay: true,
+  // autoplayTimeout: 1,
+  autoplaySpeed: 10000,
+  smartSpeed: 10000,
+  slideTransition: "linear",
+  autoplayHoverPause: false,
+  responsive: {
+    0: { items: 2 },
+    576: { items: 3 },
+    768: { items: 4 },
+    992: { items: 5 },
+    1200: { items: 6 },
+  },
 });
 
-$('.placement-carousel').owlCarousel({
-    loop: true,
-    margin: 20,
-    autoplay: true,
-    autoplayTimeout: 4000,
-    autoplayHoverPause: true,
-    dots: true,
-    responsive: {
-        0: { items: 1 },
-        768: { items: 2 },
-        1000: { items: 3 }
-    }
+$(".placement-carousel").owlCarousel({
+  loop: true,
+  margin: 20,
+  autoplay: true,
+  autoplayTimeout: 4000,
+  autoplayHoverPause: true,
+  dots: true,
+  responsive: {
+    0: { items: 1 },
+    768: { items: 2 },
+    1000: { items: 3 },
+  },
 });
 
 // $('.brands-carousel-two').owlCarousel({
@@ -229,7 +240,7 @@ $('.placement-carousel').owlCarousel({
 //     dots: false,
 //     rtl: true,
 //     autoplay: false,
-//     // autoplayTimeout: 1, 
+//     // autoplayTimeout: 1,
 //     autoplaySpeed: 5000,
 //     smartSpeed: 5000,
 //     slideTransition: 'linear',
@@ -242,3 +253,65 @@ $('.placement-carousel').owlCarousel({
 //         1200: { items: 6 }
 //     }
 // });
+
+$(".certification-slider").owlCarousel({
+  loop: true,
+  margin: 25,
+  //   padding: 20,
+  nav: true,
+  dots: true,
+  autoplay: true,
+  autoplayTimeout: 3500,
+  smartSpeed: 800,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    768: {
+      items: 2,
+    },
+    1200: {
+      items: 3,
+    },
+  },
+});
+
+// SIMPLE COUNTER
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach((counter) => {
+  counter.innerText = "0";
+
+  const updateCounter = () => {
+    const target = +counter.getAttribute("data-target") || +counter.innerText;
+    const current = +counter.innerText;
+    const increment = target / 80;
+
+    if (current < target) {
+      counter.innerText = `${Math.ceil(current + increment)}`;
+      setTimeout(updateCounter, 30);
+    } else {
+      counter.innerText = target;
+    }
+  };
+
+  const finalValue = counter.innerText;
+  counter.setAttribute("data-target", finalValue);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        updateCounter();
+        observer.unobserve(counter);
+      }
+    });
+  });
+
+  observer.observe(counter);
+});
+
+AOS.init({
+  duration: 1000,
+  once: true,
+  easing: "ease-in-out",
+});
