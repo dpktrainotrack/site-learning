@@ -141,6 +141,18 @@ section:nth-child(even) {
 /* =============================================
    MAIN NAVBAR
    ============================================= */
+span.logo-text-site {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+span.logo-text-site div {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: rgb(56, 56, 56);
+}
+
 .navbar {
   background: var(--white);
   padding: 12px 0;
@@ -173,7 +185,7 @@ section:nth-child(even) {
 }
 
 .navbar-logo {
-  height: 48px;
+  height: 55px;
   width: auto;
   transition: var(--transition);
 }
