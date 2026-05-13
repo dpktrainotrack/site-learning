@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (isMobile()) {
         // On mobile, scroll to the content panel so the user sees the courses
-        targetPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        targetPanel.scrollIntoView({ behavior: "smooth", block: "nearest" });
       } else {
         // On desktop, trigger the slide-in animation
         void targetPanel.offsetWidth;
@@ -145,6 +145,119 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   }
+
+  // 6. Category Tab Switching (Training Section)
+  const categoryTabBtns = document.querySelectorAll(".category-tab-btn");
+  const trainingTabPanes = document.querySelectorAll(".tab-pane");
+
+  if (categoryTabBtns.length > 0) {
+    categoryTabBtns.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const target = this.getAttribute("data-target");
+
+        // Update active button
+        categoryTabBtns.forEach((b) => b.classList.remove("active"));
+        this.classList.add("active");
+
+        // Update active pane
+        trainingTabPanes.forEach((pane) => {
+          pane.classList.remove("active");
+          if (pane.id === target.replace("#", "")) {
+            pane.classList.add("active");
+          }
+        });
+      });
+    });
+  }
+
+  // 7. Mega Menu Behavior Fixes (One at a time, Click outside)
+  const allDropdowns = document.querySelectorAll(".nav-item.dropdown");
+  const allDropdownMenus = document.querySelectorAll(".dropdown-menu");
+
+  // Function to close all dropdowns
+  function closeAllDropdowns() {
+    allDropdowns.forEach((dropdown) => {
+      dropdown.classList.remove("show");
+      const menu = dropdown.querySelector(".dropdown-menu");
+      if (menu) menu.classList.remove("show");
+    });
+  }
+
+  allDropdowns.forEach((dropdown) => {
+    const toggle = dropdown.querySelector(".dropdown-toggle");
+
+    toggle.addEventListener("click", function (e) {
+      if (window.innerWidth < 992) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const isOpen = dropdown.classList.contains("show");
+
+        // Close others
+        closeAllDropdowns();
+
+        // Toggle current
+        if (!isOpen) {
+          dropdown.classList.add("show");
+          const menu = dropdown.querySelector(".dropdown-menu");
+          if (menu) menu.classList.add("show");
+        }
+      }
+    });
+
+    // For desktop hover, we handle it via CSS mostly, but we can ensure
+    // that moving from one mega menu to another is smooth.
+    dropdown.addEventListener("mouseenter", function () {
+      if (window.innerWidth >= 992) {
+        // Optional: Close other specific mega menus if they have manual show classes
+      }
+    });
+  });
+
+  // Close on click outside
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".nav-item.dropdown")) {
+      closeAllDropdowns();
+    }
+  });
+
+  // 8. Prevent mega menu flickering on hover
+  allDropdownMenus.forEach((menu) => {
+    menu.addEventListener("mouseenter", function () {
+      const parent = this.closest(".dropdown");
+      if (parent) parent.classList.add("show");
+    });
+  });
+
+  // 9. New Arrival Filter Tabs
+  const naTabs = document.querySelectorAll(".na-tab");
+  const naCardItems = document.querySelectorAll(".na-card-item");
+
+  if (naTabs.length > 0 && naCardItems.length > 0) {
+    naTabs.forEach((tab) => {
+      tab.addEventListener("click", function () {
+        // Update active tab
+        naTabs.forEach((t) => t.classList.remove("active"));
+        this.classList.add("active");
+
+        const filter = this.getAttribute("data-filter");
+
+        naCardItems.forEach((card) => {
+          const category = card.getAttribute("data-category");
+          if (filter === "all" || category === filter) {
+            card.style.display = "";
+            // Trigger re-animation
+            card.style.animation = "none";
+            void card.offsetWidth;
+            card.style.animation = "naCardReveal 0.4s ease forwards";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  }
+
 });
 
 // Add keyframes for filtering animation dynamically
@@ -182,7 +295,7 @@ $(".testimonial-slider").owlCarousel({
   loop: true,
   margin: 30,
   nav: false,
-  dots: true,
+  dots: false,
   autoplay: true,
   autoplayTimeout: 4000,
   smartSpeed: 900,
@@ -199,7 +312,7 @@ $(".testimonial-slider").owlCarousel({
   },
 });
 
-$(".brands-carousel").owlCarousel({
+$(".voucher-slider").owlCarousel({
   loop: true,
   margin: 30,
   nav: false,
@@ -211,11 +324,11 @@ $(".brands-carousel").owlCarousel({
   slideTransition: "linear",
   autoplayHoverPause: false,
   responsive: {
-    0: { items: 2 },
-    576: { items: 3 },
-    768: { items: 4 },
-    992: { items: 5 },
-    1200: { items: 6 },
+    0: { items: 1 },
+    576: { items: 1 },
+    768: { items: 2 },
+    992: { items: 3 },
+    1200: { items: 4 },
   },
 });
 
@@ -271,7 +384,7 @@ $(".certification-slider").owlCarousel({
       items: 2,
     },
     1200: {
-      items: 3,
+      items: 4,
     },
   },
 });
