@@ -7,15 +7,15 @@
 
 /* ---- CSS Variables ---- */
 :root {
-  --primary: #f7a000;
-  --primary-dark: #a74822;
+  --primary: #cc7a00;
+  --primary-dark: #b80072;
   --accent: #8bffff;
   --light-bg: #F8F9FA;
   --dark-text: #212529;
-  --gray-text: #545f68;
+  --gray-text: #6C757D;
   --white: #ffffff;
-  --gradient-main: linear-gradient(135deg, #f7a000 0%, #a74822 100%);
-  --gradient-hero: linear-gradient(135deg, #0a2a3c 0%, #a74822 30%, #f7a000 60%, #a74822 100%);
+  --gradient-main: linear-gradient(135deg, #cf910a 0%, #b80072 100%);
+  --gradient-hero: linear-gradient(135deg, #0a2a3c 0%, #b80072 30%, #cf910a 60%, #b80072 100%);
   --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
@@ -2356,7 +2356,7 @@ ul.cert-listing li a i {
 ========================= */
 
 .learning-process {
-  /* background: var(--light-bg); */
+  background: var(--light-bg);
   position: relative;
   z-index: 1;
 }
@@ -4405,20 +4405,20 @@ section {
   gap: 8px;
 
   /* backdrop-filter: blur(6px); */
-  border: 1px solid var(--gradient-main);
+  border: 1px solid var(--primary);
   padding: 8px 20px;
   border-radius: 50px;
   transition: var(--transition);
-  background: var(--gradient-main);
+  background: var(--primary);
   color: var(--white);
-
+  border-color: var(--primary);
 }
 
-/* .na-overlay-btn:hover {
-  background: var(--primary-dark);
+.na-overlay-btn:hover {
+  background: var(--primary);
   color: var(--white);
-  border-color: var(--primary-dark);
-} */
+  border-color: var(--primary);
+}
 
 .na-overlay-btn i {
   transition: transform 0.3s ease;
@@ -4759,31 +4759,4 @@ section {
   .search-voucher-box .search-icon {
     display: none;
   }
-}
-
-.hero-highlight-points .highlight {
-  color: var(--primary-light);
-  /* font-weight: 600; */
-  list-style: disc;
-}
-
-.training-hero-btn {
-  background-color: var(--gradient-main);
-  color: var(--white);
-}
-
-.training-hero-btn:hover {
-  color: var(--white) !important;
-}
-
-.benefits-list .benefit-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 20px;
-  list-style-type: disc;
-}
-
-ul.benefits-list {
-  list-style: disc;
 }

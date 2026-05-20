@@ -36,8 +36,13 @@
 <body>
     <nav class="navbar navbar-expand-lg" id="mainNavbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/images/logo.png" alt="Site Learning America" class="navbar-logo">
+            <a class="navbar-brand d-flex align-items-center gap-1" href="index.html">
+                <img src="assets/images/logo2.png" alt="Site Learning America" class="navbar-logo">
+                <span class="logo-text-site">
+                    <div class="">SITE </div>
+                    <div>LEARNING</div>
+                    <div>AMERICA</div>
+                </span>
             </a>
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarMainMenu" aria-controls="navbarMainMenu" aria-expanded="false"
@@ -50,11 +55,11 @@
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                     <!-- MEGA MENU -->
-                    <li class="nav-item dropdown mega-dropdown " style="width: 100%;">
+                    <li class="nav-item dropdown mega-dropdown ">
                         <a class="nav-link dropdown-toggle" href="#" id="megaMenuDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">Training <i
                                 class="fa-solid fa-angle-down "></i></a>
-                        <div class="dropdown-menu mega-menu" aria-labelledby="megaMenuDropdown">
+                        <div class="dropdown-menu mega-menu" aria-labelledby="megaMenuDropdown" style="width: 100%;">
                             <div class="container">
                                 <div class="mega-menu-category-header">
                                     <h3>Training & Certification </h3>
@@ -65,7 +70,7 @@
                                         <div class="mega-menu-category certfication-left-list">
                                             <ul class="mega-menu-links" id="certLeftNav">
                                                 <li class="cert-nav-item active" data-target="aws-panel">
-                                                    <a href="aws.html">
+                                                    <a href="vouchers.html">
                                                         <i class="fa-brands fa-aws"></i>
                                                         <div>
                                                             <span class="mega-link-title">AWS Certification</span>
@@ -75,7 +80,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="cert-nav-item" data-target="microsoft-panel">
-                                                    <a href="microsoft.html">
+                                                    <a href="vouchers.html">
                                                         <i class="fa-brands fa-microsoft"></i>
                                                         <div>
                                                             <span class="mega-link-title">Microsoft Certification</span>
@@ -85,7 +90,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="cert-nav-item" data-target="pecb-panel">
-                                                    <a href="pecb.html">
+                                                    <a href="vouchers.html">
                                                         <i class="fa-solid fa-certificate"></i>
                                                         <div>
                                                             <span class="mega-link-title">PECB Certification</span>
@@ -95,7 +100,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="cert-nav-item" data-target="pega-panel">
-                                                    <a href="pega.html">
+                                                    <a href="vouchers.html">
                                                         <i class="fa-solid fa-gears"></i>
                                                         <div>
                                                             <span class="mega-link-title">PEGA Certification</span>
@@ -105,7 +110,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="cert-nav-item" data-target="cisco-panel">
-                                                    <a href="cisco.html">
+                                                    <a href="vouchers.html">
                                                         <i class="fa-solid fa-network-wired"></i>
                                                         <div>
                                                             <span class="mega-link-title">CISCO Certification</span>
@@ -115,7 +120,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="cert-nav-item" data-target="comptia-panel">
-                                                    <a href="comptia.html">
+                                                    <a href="vouchers.html">
                                                         <i class="fa-solid fa-laptop-code"></i>
                                                         <div>
                                                             <span class="mega-link-title">CompTIA Certification</span>
@@ -125,7 +130,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="cert-nav-item" data-target="paloalto-panel">
-                                                    <a href="paloalto.html">
+                                                    <a href="vouchers.html">
                                                         <i class="fa-solid fa-fire-flame-curved"></i>
                                                         <div>
                                                             <span class="mega-link-title">Paloalto Certification</span>
@@ -412,7 +417,7 @@
 
                                             <ul class="mega-menu-links">
                                                 <li class="has-submenu">
-                                                    <a href="vouchers.html">
+                                                    <a href="vouchers.html" class="d-flex justify-content-between">
                                                         <span>AWS Vouchers</span>
                                                         <i class="fa-solid fa-chevron-right"></i>
                                                     </a>
@@ -451,77 +456,81 @@
                                                         </ul>
                                                     </div>
                                                 </li>
-                                                <li><a href="vouchers.html"><span>Microsoft Azure</span></a></li>
-                                                <li><a href="vouchers.html"><span>Google Cloud (GCP)</span></a></li>
+                                                <li><a href="vouchers.html"><span>Microsoft Voucher</span></a></li>
+                                                <li><a href="vouchers.html"><span>PECB Voucher</span></a></li>
+                                                <li><a href="vouchers.html"><span>PEGA Voucher</span></a></li>
+                                                <li><a href="vouchers.html"><span>CISCO Voucher</span></a></li>
+                                                <li><a href="vouchers.html"><span>CompTIA Voucher</span></a></li>
+                                                <li><a href="vouchers.html"><span>Paloalto Voucher</span></a></li>
                                             </ul>
                                         </div>
                                     </div>
 
                                     <!-- <div class="col-lg-3">
-                                        <div class="mega-menu-column">
-                                            <div class="column-header">
-                                                <i class="fa-solid fa-shield-halved"></i>
-                                                <h5>Cybersecurity</h5>
+                                            <div class="mega-menu-column">
+                                                <div class="column-header">
+                                                    <i class="fa-solid fa-shield-halved"></i>
+                                                    <h5>Cybersecurity</h5>
+                                                </div>
+                                                <ul class="mega-menu-links">
+                                                    <li><a href="vouchers.html"><span>CompTIA Security+</span></a></li>
+                                                    <li><a href="vouchers.html"><span>Palo Alto PCNSA/PCNSE</span></a></li>
+                                                    <li><a href="vouchers.html"><span>Cisco CyberOps</span></a></li>
+                                                    <li><a href="vouchers.html"><span>CEH Vouchers</span></a></li>
+                                                </ul>
                                             </div>
-                                            <ul class="mega-menu-links">
-                                                <li><a href="vouchers.html"><span>CompTIA Security+</span></a></li>
-                                                <li><a href="vouchers.html"><span>Palo Alto PCNSA/PCNSE</span></a></li>
-                                                <li><a href="vouchers.html"><span>Cisco CyberOps</span></a></li>
-                                                <li><a href="vouchers.html"><span>CEH Vouchers</span></a></li>
-                                            </ul>
                                         </div>
-                                    </div>
+                                        
+                                        <div class="col-lg-3">
+                                            <div class="mega-menu-column">
+                                                <div class="column-header">
+                                                    <i class="fa-solid fa-network-wired"></i>
+                                                    <h5>Networking & IT</h5>
+                                                </div>
+                                                <ul class="mega-menu-links">
+                                                    <li><a href="vouchers.html"><span>Cisco CCNA/CCNP</span></a></li>
+                                                    <li><a href="vouchers.html"><span>CompTIA A+/Network+</span></a></li>
+                                                    <li><a href="vouchers.html"><span>Juniper Vouchers</span></a></li>
+                                                    <li><a href="vouchers.html"><span>Aruba Vouchers</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     
-                                    <div class="col-lg-3">
-                                        <div class="mega-menu-column">
-                                            <div class="column-header">
-                                                <i class="fa-solid fa-network-wired"></i>
-                                                <h5>Networking & IT</h5>
-                                            </div>
-                                            <ul class="mega-menu-links">
-                                                <li><a href="vouchers.html"><span>Cisco CCNA/CCNP</span></a></li>
-                                                <li><a href="vouchers.html"><span>CompTIA A+/Network+</span></a></li>
-                                                <li><a href="vouchers.html"><span>Juniper Vouchers</span></a></li>
-                                                <li><a href="vouchers.html"><span>Aruba Vouchers</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                
-                                    <div class="col-lg-3">
-                                        <div class="mega-menu-column featured-column">
-                                            <div class="column-header">
-                                                <i class="fa-solid fa-star"></i>
-                                                <h5>Specialized</h5>
-                                            </div>
-                                            <ul class="mega-menu-links">
-                                                <li><a href="vouchers.html"><span>PEGA Vouchers</span></a></li>
-                                                <li><a href="vouchers.html"><span>PECB Lead Auditor</span></a></li>
-                                                <li><a href="vouchers.html"><span>ITIL Vouchers</span></a></li>
-                                                <li><a href="vouchers.html"><span>Project Management (PMP)</span></a>
-                                                </li>
-                                            </ul>
-                                            <div class="mega-menu-promo mt-4">
-                                                <div class="promo-box">
-                                                    <span>Special Offer</span>
-                                                    <p>Get up to 20% off on bulk voucher bookings!</p>
-                                                    <a href="contact.html" class="btn btn-sm btn-primary">Enquire
-                                                        Now</a>
+                                        <div class="col-lg-3">
+                                            <div class="mega-menu-column featured-column">
+                                                <div class="column-header">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <h5>Specialized</h5>
+                                                </div>
+                                                <ul class="mega-menu-links">
+                                                    <li><a href="vouchers.html"><span>PEGA Vouchers</span></a></li>
+                                                    <li><a href="vouchers.html"><span>PECB Lead Auditor</span></a></li>
+                                                    <li><a href="vouchers.html"><span>ITIL Vouchers</span></a></li>
+                                                    <li><a href="vouchers.html"><span>Project Management (PMP)</span></a>
+                                                    </li>
+                                                </ul>
+                                                <div class="mega-menu-promo mt-4">
+                                                    <div class="promo-box">
+                                                        <span>Special Offer</span>
+                                                        <p>Get up to 20% off on bulk voucher bookings!</p>
+                                                        <a href="contact.html" class="btn btn-sm btn-primary">Enquire
+                                                            Now</a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div> -->
+                                        </div> -->
                                 </div>
                             </div>
                         </div>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="about.html">About</a></li> -->
 
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
                 <div class="navbar-cta ms-lg-3">
                     <a href="contact.html" class="btn btn-cta-nav" id="navEnquiryBtn"><i
-                            class="fa-solid fa-paper-plane"></i><span>Enquiry Now</span></a>
+                            class="fa-brands fa-whatsapp"></i><span>+1 804-441-8645</span></a>
                 </div>
             </div>
         </div>
@@ -570,21 +579,6 @@
             </div>
 
             <!-- Filter & Sort Bar -->
-            <div class="filter-sort-bar" data-aos="fade-up">
-                <div class="filter-pills" id="filterPills">
-                    <span class="filter-pill active" data-filter="all">All</span>
-                    <span class="filter-pill" data-filter="best-selling">Best Selling</span>
-                    <span class="filter-pill" data-filter="latest">Latest</span>
-                    <span class="filter-pill" data-filter="trending">Trending</span>
-                </div>
-                <div class="sort-dropdown">
-                    <select id="sortSelect">
-                        <option value="relevant">Most Relevant</option>
-                        <option value="low-to-high">Price: Low to High</option>
-                        <option value="high-to-low">Price: High to Low</option>
-                    </select>
-                </div>
-            </div>
 
             <!-- Tab Content Area -->
             <div class="tab-content-area">

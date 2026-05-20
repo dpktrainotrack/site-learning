@@ -1,0 +1,227 @@
+:root {
+    --primary: #f7a000;
+    --primary-dark: #a74822;
+    --accent: #8bffff;
+    --light-bg: #F8F9FA;
+    --dark-text: #212529;
+    --gray-text: #545f68;
+    --white: #ffffff;
+    --gradient-main: linear-gradient(135deg, #f7a000 0%, #a74822 100%);
+    --gradient-hero: linear-gradient(135deg, #4d1f04 0%, #a74822 30%, #f7a000 60%, #a74822 100%);
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+    --transition: all 0.3s ease;
+    --radius: 12px;
+    --radius-sm: 8px;
+}
+
+/* ================== TRAINING HERO SECTION ================== */
+.training-hero-section {
+    position: relative;
+    padding: 40px 0;
+    min-height: 70vh;
+    background: url('../images/traning/banners/banner2.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.training-hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(45, 45, 48, 0.7) 10%, rgba(12, 8, 32, 0.3) 100%);
+    z-index: 1;
+}
+
+.training-hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.training-hero-section .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.training-hero-section .hero-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.hero-content-card .stat-box {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hero-content-card .stat-box:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.hero-content-card .stat-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.hero-content-card .stat-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2px;
+}
+
+.hero-content-card .stat-text p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Form Card */
+.hero-form-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.hero-form-card .form-header {
+    background: var(--gradient-hero);
+    /* Orange color matching image */
+    padding: 30px;
+    text-align: left;
+}
+
+.hero-form-card .form-body {
+    padding: 30px;
+}
+
+.hero-form-card .form-control,
+.hero-form-card .form-select {
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+}
+
+.hero-form-card .form-control:focus,
+.hero-form-card .form-select:focus {
+    border-color: var(--gradient-main);
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+    background-color: #fff;
+}
+
+.hero-form-card .btn-warning {
+    background-color: var(--gradient-main);
+    border-color: var(--gradient-main);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.hero-form-card .btn-warning:hover {
+    background-color: #d97706;
+    border-color: #d97706;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+}
+
+.training-hero-btn {
+    background: var(--gradient-main);
+    border-color: var(--gradient-main);
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+
+}
+
+.training-hero-btn:hover {
+    background: var(--gradient-hero);
+    border-color: var(--gradient-hero);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+}
+
+@media (max-width: 991px) {
+    .training-hero-section {
+        padding: 80px 0;
+    }
+
+    .training-hero-section .hero-title {
+        font-size: 2rem;
+    }
+}
+
+
+.hero-highlight-points .highlight {
+    color: var(--primary-light);
+    /* font-weight: 600; */
+    list-style: disc;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.training-hero-btn {
+    background-color: var(--gradient-main);
+    color: var(--white);
+}
+
+.training-hero-btn:hover {
+    color: var(--white) !important;
+}
+
+.course-duration {
+    color: rgb(155, 155, 155);
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.course-duration .course-value {
+    font-weight: 600;
+    color: #2e1b0b;
+}
+
+.course-title-custom {
+    /* font-size: 28px; */
+    font-weight: 700;
+    color: var(--dark-text);
+    /* margin-bottom: 0; */
+}
+
+.traning-short-desc {
+    margin-bottom: 6px;
+    color: var(--gray-text);
+}
+
+.traning-card-title {
+    font-size: 22px;
+}
