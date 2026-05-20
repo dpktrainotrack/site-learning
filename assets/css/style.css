@@ -69,7 +69,7 @@ section {
 }
 
 section:nth-child(even) {
-  background-color: #fffef2;
+  background-color: #fff8e4;
 }
 
 /* =============================================
@@ -2356,7 +2356,7 @@ ul.cert-listing li a i {
 ========================= */
 
 .learning-process {
-  /* background: var(--light-bg); */
+  background: var(--light-bg);
   position: relative;
   z-index: 1;
 }
@@ -4529,8 +4529,8 @@ section {
 }
 
 .na-enroll-btn {
-  display: none;
-  /* display: inline-flex; */
+  /* display: none; */
+  display: inline-flex;
   align-items: center;
   padding: 8px 18px;
   border-radius: 50px;
@@ -4759,31 +4759,4 @@ section {
   .search-voucher-box .search-icon {
     display: none;
   }
-}
-
-.hero-highlight-points .highlight {
-  color: var(--primary-light);
-  /* font-weight: 600; */
-  list-style: disc;
-}
-
-.training-hero-btn {
-  background-color: var(--gradient-main);
-  color: var(--white);
-}
-
-.training-hero-btn:hover {
-  color: var(--white) !important;
-}
-
-.benefits-list .benefit-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 20px;
-  list-style-type: disc;
-}
-
-ul.benefits-list {
-  list-style: disc;
 }
