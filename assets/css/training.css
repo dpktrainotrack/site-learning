@@ -225,3 +225,104 @@
 .traning-card-title {
     font-size: 22px;
 }
+
+/* ================== OVERVIEW SECTION ================== */
+.overview-section {
+    position: relative;
+    z-index: 2;
+}
+
+.overview-content .highlight-text {
+    color: var(--primary);
+    background: var(--gradient-main);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.overview-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--gray-text);
+}
+
+.btn-primary-custom {
+    background: var(--gradient-main);
+    border: none;
+    transition: var(--transition);
+}
+
+.btn-primary-custom:hover {
+    background: var(--gradient-hero);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(247, 160, 0, 0.4) !important;
+}
+
+.glassmorphism-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius);
+    padding: 25px 20px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.glassmorphism-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-main);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.glassmorphism-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.glassmorphism-card:hover::before {
+    transform: scaleX(1);
+}
+
+.benefit-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background: rgba(247, 160, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.glassmorphism-card:hover .benefit-icon {
+    background: var(--gradient-main);
+    color: var(--white);
+    transform: rotateY(180deg);
+}
+
+.benefit-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--dark-text);
+}
+
+.benefit-desc {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    margin-bottom: 0;
+}
