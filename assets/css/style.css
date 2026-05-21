@@ -1701,7 +1701,7 @@ ul.cert-listing li a i {
 ========================= */
 
 .popular-certifications {
-  background: var(--light-bg);
+  /* background: var(--light-bg); */
   position: relative;
   z-index: 1;
 }
@@ -1724,7 +1724,7 @@ ul.cert-listing li a i {
    ============================================= */
 
 .popular-certifications {
-  background-color: #fff;
+  /* background-color: #fff; */
   /* padding: 100px 0; */
 }
 
@@ -4180,7 +4180,7 @@ section {
    ============================================== */
 
 .new-arrival {
-  background: linear-gradient(160deg, #f0fcfd 0%, #ffffff 50%, #f5feff 100%);
+  /* background: linear-gradient(160deg, #f0fcfd 0%, #ffffff 50%, #f5feff 100%); */
   position: relative;
 }
 
