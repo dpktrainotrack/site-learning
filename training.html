@@ -32,13 +32,234 @@
     <link rel="stylesheet" href="assets/css/training.css">
 
 
+    <style>
+        /* ===========================
+   QUICK INFO STRIP
+=========================== */
+        .trail-info-strip {
+            background: #fff;
+            border-bottom: 1px solid #E2E8F0;
+            padding: 0;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .trail-info-strip-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+            padding: 0 20px;
+        }
+
+        .trail-strip-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 22px 30px;
+            transition: background 0.3s ease;
+        }
+
+        .trail-strip-item:hover {
+            background: var(--trail-surface);
+        }
+
+        .trail-strip-item>i {
+            font-size: 22px;
+            color: var(--trail-primary);
+            width: 36px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .strip-label {
+            display: block;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--trail-text-muted);
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .strip-value {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--trail-secondary);
+            line-height: 1;
+        }
+
+        .trail-strip-divider {
+            width: 1px;
+            height: 40px;
+            background: #E2E8F0;
+            flex-shrink: 0;
+        }
+
+        /* ===========================
+   COURSE OVERVIEW
+=========================== */
+        .trail-overview {
+            padding: 50px 0;
+            background: #fff;
+        }
+
+        .trail-overview-text {
+            font-size: 16px;
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .trail-overview-highlights {
+            margin-top: 32px;
+        }
+
+        .trail-highlights-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--trail-secondary);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #E2E8F0;
+        }
+
+        .trail-highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 16px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .trail-highlight-item i {
+            color: var(--trail-primary);
+            font-size: 15px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .trail-requirements {
+            background: var(--trail-surface);
+            border-radius: var(--trail-radius);
+            padding: 24px 28px;
+            border-left: 4px solid var(--trail-primary);
+        }
+
+        .trail-req-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .trail-req-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 16px;
+            color: #475569;
+            padding: 8px 0;
+            border-bottom: 1px dashed #E2E8F0;
+        }
+
+        .trail-req-list li:last-child {
+            border-bottom: none;
+        }
+
+        .trail-req-list li i {
+            color: var(--trail-primary);
+            font-size: 12px;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+    </style>
+
+
 </head>
 
 <body>
 
 
 
+    <!-- ========== MAIN NAVBAR ========== -->
+    <nav class="navbar navbar-expand-lg" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-1" href="index.html">
+                <img src="assets/images/logo2.png" alt="Site Learning America" class="navbar-logo">
+                <span class="logo-text-site">
+                    <div class="">SITE </div>
+                    <div>LEARNING</div>
+                    <div>AMERICA</div>
+                </span>
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarMainMenu" aria-controls="navbarMainMenu" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMainMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="training.html">Training</a></li> -->
 
+
+                    <li class="nav-item dropdown mega-dropdown voucher-mega-dropdown position-relative">
+                        <a class="nav-link dropdown-toggle" href="listing.html">Training <i
+                                class="fa-solid fa-angle-down"></i></a>
+                        <div class="dropdown-menu mega-menu voucher-mega-menu">
+                            <div class="" style="min-width: 200px;">
+                                <div class="mega-menu-column">
+                                    <ul class="mega-menu-links">
+                                        <li><a href="training.html"><span>AWS</span></a></li>
+                                        <li><a href="training.html"><span>Microsoft</span></a></li>
+                                        <li><a href="training.html"><span>PECB</span></a></li>
+                                        <li><a href="training.html"><span>PEGA</span></a></li>
+                                        <li><a href="training.html"><span>CISCO</span></a></li>
+                                        <li><a href="training.html"><span>CompTIA</span></a></li>
+                                        <li><a href="training.html"><span>Paloalto</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mega-dropdown voucher-mega-dropdown position-relative">
+                        <a class="nav-link dropdown-toggle" href="listing.html">Vouchers <i
+                                class="fa-solid fa-angle-down"></i></a>
+                        <div class="dropdown-menu mega-menu voucher-mega-menu">
+                            <div class="" style="min-width: 200px;">
+                                <div class="mega-menu-column">
+                                    <ul class="mega-menu-links">
+                                        <li><a href="vouchers.html"><span>AWS</span></a></li>
+                                        <li><a href="vouchers.html"><span>Microsoft</span></a></li>
+                                        <li><a href="vouchers.html"><span>PECB</span></a></li>
+                                        <li><a href="vouchers.html"><span>PEGA</span></a></li>
+                                        <li><a href="vouchers.html"><span>CISCO</span></a></li>
+                                        <li><a href="vouchers.html"><span>CompTIA</span></a></li>
+                                        <li><a href="vouchers.html"><span>Paloalto</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- <li class="nav-item"><a class="nav-link" href="about.html">About</a></li> -->
+
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="navbar-cta ms-lg-3">
+                    <a href="contact.html" class="btn btn-cta-nav" id="navEnquiryBtn"><i
+                            class="fa-brands fa-whatsapp"></i><span>+1 804-441-8645</span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
     <!-- =================== HERO SECTION ================== -->
     <section class="training-hero-section">
         <div class="container h-100">
@@ -129,444 +350,426 @@
             </div>
         </div>
     </section>
-
-
-
-    <section class=" py-5 position-relative overflow-hidden">
-        <div class="container ">
-            <div class=" mb-5">
-                <h2 class="course-title-custom">
-                    AWS <span class="highlight-text">Training and Certification</span>
-                </h2>
-                <p class="">
-                    Stay ahead of the curve. Explore our latest IT certification programs and exam
-                    vouchers added to keep your skills industry-relevant and future-ready.
-                </p>
-            </div>
-
-
-
-            <!-- CARDS GRID -->
-            <div class="row g-4" id="naCardsGrid">
-
-                <!-- CARD 1 -->
-                <div class="col-xl-4 col-lg-4 col-md-6 na-card-item" data-category="cloud" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <div class="na-card">
-                        <div class="na-card-img pt-3">
-                            <img src="assets/images/traning/aws/AWS Certified Developer Associate - DVA-C02.webp"
-                                alt="AWS Cloud Practitioner">
-                            <!-- <div class="na-card-overlay">
-                                <a href="detail.html" class="na-overlay-btn">
-                                    View Details
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div> -->
-                        </div>
-                        <div class="na-card-body">
-                            <h4 class="traning-card-title">AWS Cloud Practitioner CLF-C02</h4>
-                            <div class="course-duration">
-                                Duration :<span class="course-value">30 Hours</span>
-                            </div>
-                            <!-- <div class="course-duration"> 
-                                Mode :<span class="course-value">Classroom / Online</span>
-                            </div> -->
-                            <div class="na-card-footer">
-                                <div class="na-price-wrap">
-                                    <span class="na-original">$150.00</span>
-                                    <span class="na-current">$120.00</span>
-                                </div>
-                                <a href="contact.html" class="na-enroll-btn">Enroll Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 na-card-item" data-category="cloud" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <div class="na-card">
-                        <div class="na-card-img pt-3">
-                            <img src="assets/images/traning/aws/AWS Certified Solutions Architect Professional.webp"
-                                alt="AWS Cloud Practitioner">
-                            <!-- <div class="na-card-overlay">
-                                <a href="detail.html" class="na-overlay-btn">
-                                    View Details
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div> -->
-                        </div>
-                        <div class="na-card-body">
-                            <h4 class="traning-card-title">AWS Cloud Practitioner CLF-C02</h4>
-                            <div class="course-duration">
-                                Duration :<span class="course-value">30 Hours</span>
-                            </div>
-                            <!-- <div class="course-duration"> 
-                                Mode :<span class="course-value">Classroom / Online</span>
-                            </div> -->
-                            <div class="na-card-footer">
-                                <div class="na-price-wrap">
-                                    <span class="na-original">$150.00</span>
-                                    <span class="na-current">$120.00</span>
-                                </div>
-                                <a href="contact.html" class="na-enroll-btn">Enroll Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 na-card-item" data-category="cloud" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <div class="na-card">
-                        <div class="na-card-img pt-3">
-                            <img src="assets/images/traning/aws/Cloud-Practitioner.webp" alt="AWS Cloud Practitioner">
-                            <!-- <div class="na-card-overlay">
-                                <a href="detail.html" class="na-overlay-btn">
-                                    View Details
-                                    <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div> -->
-                        </div>
-                        <div class="na-card-body">
-                            <h4 class="traning-card-title">AWS Cloud Practitioner CLF-C02</h4>
-                            <div class="course-duration">
-                                Duration :<span class="course-value">30 Hours</span>
-                            </div>
-                            <!-- <div class="course-duration"> 
-                                Mode :<span class="course-value">Classroom / Online</span>
-                            </div> -->
-                            <div class="na-card-footer">
-                                <div class="na-price-wrap">
-                                    <span class="na-original">$150.00</span>
-                                    <span class="na-current">$120.00</span>
-                                </div>
-                                <a href="contact.html" class="na-enroll-btn">Enroll Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-    <!-- OVERVIEW SECTION -->
-    <section>
+    <section class="trail-info-strip ">
         <div class="container">
-            <div class="overview-section py-5" data-aos="fade-up">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 mb-5 mb-lg-0">
-                        <div class="overview-content pe-lg-4">
-                            <h2 class="course-title-custom mb-4">
-                                AWS Training <span class="highlight-text"> Overview</span>
-                            </h2>
-                            <p class="overview-text mb-4">
-                                Our AWS training courses are designed to equip you with the skills and knowledge needed
-                                to
-                                excel in the cloud computing industry. Whether you're a beginner looking to start your
-                                cloud
-                                journey or an experienced professional aiming to deepen your expertise, our
-                                comprehensive
-                                training programs have got you covered.
-                            </p>
-                            <!-- <a href="#naCardsGrid"
-                                class="btn btn-primary-custom rounded-pill px-4 py-2 fw-bold text-white shadow-sm">Explore
-                                Courses <i class="fa-solid fa-arrow-right ms-2"></i></a> -->
-                        </div>
+            <div class="trail-info-strip-inner">
+                <div class="trail-strip-item">
+                    <!-- <i class="fa fa-clock"></i> -->
+                    <div>
+                        <!-- <span class="strip-label">Duration</span> -->
+                        <span class="strip-value"><a href="#training-overview">Overview</a></span>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="row g-4">
-                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                                <div class="benefit-card glassmorphism-card h-100">
-                                    <div class="benefit-icon">
-                                        <i class="fa-solid fa-book-open"></i>
-                                    </div>
-                                    <h5 class="benefit-title">Comprehensive Curriculum</h5>
-                                    <p class="benefit-desc">Covering all aspects of AWS services with up-to-date
-                                        content.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                                <div class="benefit-card glassmorphism-card h-100">
-                                    <div class="benefit-icon">
-                                        <i class="fa-solid fa-chalkboard-user"></i>
-                                    </div>
-                                    <h5 class="benefit-title">Expert Instructors</h5>
-                                    <p class="benefit-desc">Learn from professionals with real-world industry expertise.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                                <div class="benefit-card glassmorphism-card h-100">
-                                    <div class="benefit-icon">
-                                        <i class="fa-solid fa-laptop-code"></i>
-                                    </div>
-                                    <h5 class="benefit-title">Hands-on Labs</h5>
-                                    <p class="benefit-desc">Practical exercises and real-world projects for better
-                                        understanding.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-                                <div class="benefit-card glassmorphism-card h-100">
-                                    <div class="benefit-icon">
-                                        <i class="fa-solid fa-briefcase"></i>
-                                    </div>
-                                    <h5 class="benefit-title">Career Support</h5>
-                                    <p class="benefit-desc">Job placement assistance and career guidance for your
-                                        success.</p>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+                <div class="trail-strip-divider"></div>
+                <div class="trail-strip-item">
+                    <span class="strip-value"><a href="#training-curriculum">Training and Courses</a></span>
+                </div>
+                <div class="trail-strip-divider"></div>
+
+
+                <div class="trail-strip-item">
+                    <span class="strip-value"><a href="#testimonials">
+                            Reviews
+                        </a></span>
+                </div>
+                <div class="trail-strip-divider"></div>
+                <div class="trail-strip-item">
+                    <div>
+                        <span class="strip-value"><a href="#trainee-faq">FAQs</a></span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class=" ">
-        <div class="container py-5">
 
-            <h2 class="section-heading">
-                What Our Learners
-                <span>Say About Our Training</span>
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12">
+                    <div class="content-area-left">
+                        <div class="overview">
 
-            </h2>
-            <p class="short-desc">
-                Hear from our students about their experience with our AWS training courses and how it has
-                helped them achieve their career goals in the cloud computing industry.
-            </p>
+                            <h2 class="title-stylish"> Overview for the <span>AWS training</span></h2>
+                            <p>Gain comprehensive knowledge of AWS services, architectures, and best practices to
+                                design,
+                                deploy, and manage secure and scalable cloud solutions. Master cloud fundamentals,
+                                security, and
+                                cost optimization techniques.</p>
 
-            <!-- OWL CAROUSEL -->
-            <div class="owl-carousel testimonial-slider" id="brandsReview">
+                            <h5>AWS - What you will learn</h2>
+                                <ul class="training-details-list"
+                                    style="font-size: 16px; line-height: 1.9; color:rgb(90, 90, 90)">
+                                    <li> Fundamentals of cloud computing and
+                                        AWS</li>
+                                    <li> Design and deploy scalable, secure,
+                                        and
+                                        cost-effective cloud solutions</li>
+                                    <li> Implement best practices for
+                                        security,
+                                        reliability, and performance</li>
+                                    <li> Cost optimization, monitoring, and governance
+                                    </li>
+                                    <li> Best practices for migrating workloads to the
+                                        cloud</li>
+                                </ul>
 
-                <!-- ITEM -->
-                <div class="brand-testimonial-card item">
+                                <div class="course-details-grid">
+                                    <div class="course-detail-item">
+                                        <div class="d-flex gap-2">
+                                            <div class="icon-wrapper">
+                                                <i class="fa-solid fa-laptop-house"></i>
+                                            </div>
 
-                    <div class="quote-icon">
-                        <i class="fa-solid fa-quote-left"></i>
-                    </div>
+                                            <div class="cont">
+                                                <div class="detail-label">Mode</div>
+                                                <div class="detail-value">Online / Classroom</div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                    <div class="testimonial-rating">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
 
-                    <p class="testimonial-text">
-                        The CISA training was extremely detailed and practical.
-                        The trainer explained concepts with real-world examples,
-                        and the mock exams helped me clear the certification on
-                        my first attempt.
-                    </p>
+                                    <div class="course-detail-item">
+                                        <div class="d-flex gap-2">
+                                            <div class="icon-wrapper">
+                                                <i class="fa-solid fa-globe "></i>
+                                            </div>
+                                            <div class="cont">
 
-                    <div class="testimonial-user">
+                                                <div class="detail-label">Language</div>
+                                                <div class="detail-value">English</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="course-detail-item">
+                                        <div class="d-flex gap-2">
+                                            <div class="icon-wrapper">
+                                                <i class="fa-solid fa-layer-group"></i>
+                                            </div>
 
-                        <div class="user-image">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+                                            <div class="cont">
+                                                <div class="detail-label">Level</div>
+                                                <div class="detail-value">Associate</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="course-detail-item">
+                                        <div class="d-flex gap-2">
+                                            <div class="icon-wrapper">
+                                                <i class="fa-solid fa-book-open-reader"></i>
+                                            </div>
+
+                                            <div class="cont">
+                                                <div class="detail-label">Prerequisites</div>
+                                                <div class="detail-value">IT knowledge</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
                         </div>
+                        <!-- TRAINING AND COURSES -->
+                        <div class="training-and-courses pt-5">
+                            <div class="training-and-courses-inner pt-3">
+                                <div class="training-and-courses-content">
+                                    <h3 class="title-stylish">Training and <span>Courses</span></h3>
 
-                        <div class="user-info">
-                            <h5>Michael Anderson</h5>
-                            <span>IT Auditor • USA</span>
+                                </div>
+                                <div class="mt-4">
+                                    <div class="fancy-card-wraper">
+                                        <div class="traning-fancy-card">
+                                            <div class="course-card">
+                                                <div class="course-image">
+                                                    <img src="assets/images/traning/aws/Cloud-Practitioner.webp"
+                                                        class="img-fluid" alt="AWS Course">
+                                                </div>
+                                                <div class="fancy-card">
+                                                    <div class="course-content">
+                                                        <div class=" mb-3">
+                                                            <h5 class=" mb-2">
+                                                                AWS Certified Cloud Practitioner - CLF-C02
+                                                            </h5>
+                                                            <div class="mb-1">Duration : 30 Hours
+
+                                                            </div>
+                                                            <div class="mb-1">Price: $10,000/-</div>
+                                                            <div class="enroll-btn-wrapper mt-2">
+                                                                <button class="enroll-btn">
+                                                                    Full Details
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
                         </div>
+                        <!-- TRAINING-REVIEWS-CAROUSEL -->
+                        <div class="traning-reviews-carousel pt-5" id="testimonials">
 
+                            <h3 class="title-stylish mb-4">What Our Trainees <span> Say</span></h3>
+                            <div id="brandsReview" class="owl-carousel owl-theme">
+                                <div class="item">
+                                    <div class="students-review-card">
+
+                                        <div class="verified-badge">
+                                            <i class="fa-solid fa-circle-check"></i>
+                                            Verified
+                                        </div>
+
+                                        <div class="quote-icon">
+                                            <i class="fa-solid fa-quote-left"></i>
+                                        </div>
+
+                                        <p class="review-text">
+                                            The training sessions were extremely practical and easy to understand.
+                                            The instructor explained every concept clearly and helped me pass my
+                                            certification exam confidently.
+                                        </p>
+
+                                        <div class="student-info">
+                                            <img src="https://i.pravatar.cc/150?img=12" class="student-image"
+                                                alt="student">
+
+                                            <div>
+                                                <h5 class="student-name">Aman Sharma</h5>
+                                                <div class="student-role">
+                                                    AWS Cloud Practitioner
+                                                </div>
+
+                                                <div class="rating">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="students-review-card">
+
+                                        <div class="verified-badge">
+                                            <i class="fa-solid fa-circle-check"></i>
+                                            Verified
+                                        </div>
+
+                                        <div class="quote-icon">
+                                            <i class="fa-solid fa-quote-left"></i>
+                                        </div>
+
+                                        <p class="review-text">
+                                            The training sessions were extremely practical and easy to understand.
+                                            The instructor explained every concept clearly and helped me pass my
+                                            certification exam confidently.
+                                        </p>
+
+                                        <div class="student-info">
+                                            <img src="https://i.pravatar.cc/150?img=12" class="student-image"
+                                                alt="student">
+
+                                            <div>
+                                                <h5 class="student-name">Aman Sharma</h5>
+                                                <div class="student-role">
+                                                    AWS Cloud Practitioner
+                                                </div>
+
+                                                <div class="rating">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="students-review-card">
+
+                                        <div class="verified-badge">
+                                            <i class="fa-solid fa-circle-check"></i>
+                                            Verified
+                                        </div>
+
+                                        <div class="quote-icon">
+                                            <i class="fa-solid fa-quote-left"></i>
+                                        </div>
+
+                                        <p class="review-text">
+                                            The training sessions were extremely practical and easy to understand.
+                                            The instructor explained every concept clearly and helped me pass my
+                                            certification exam confidently.
+                                        </p>
+
+                                        <div class="student-info">
+                                            <img src="https://i.pravatar.cc/150?img=12" class="student-image"
+                                                alt="student">
+
+                                            <div>
+                                                <h5 class="student-name">Aman Sharma</h5>
+                                                <div class="student-role">
+                                                    AWS Cloud Practitioner
+                                                </div>
+
+                                                <div class="rating">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FAQ -->
+                        <div class="training-faq pt-5" id="trainee-faq">
+                            <h3 class="title-stylish mb-4">FAQ <span> </span></h3>
+                            <div class="accordion custom-faq" id="faqAccordion">
+
+                                <!-- ITEM -->
+                                <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#faq1">
+                                            How do I purchase a certification exam voucher?
+                                        </button>
+                                    </h2>
+
+                                    <div id="faq1" class="accordion-collapse collapse show"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Simply browse your preferred certification program, choose your exam
+                                            voucher,
+                                            complete the secure checkout process, and receive your voucher details by
+                                            email.
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <!-- ITEM -->
+                                <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq2">
+                                            Are your certification vouchers authentic?
+                                        </button>
+                                    </h2>
+
+                                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Yes, all certification vouchers provided through our platform are 100%
+                                            genuine
+                                            and sourced from authorized certification providers.
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <!-- ITEM -->
+                                <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq3">
+                                            Can I schedule my certification exam online?
+                                        </button>
+                                    </h2>
+
+                                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Yes, most certification exams can be scheduled online through official
+                                            testing
+                                            platforms after receiving your exam voucher.
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
                     </div>
-
                 </div>
 
-                <!-- ITEM -->
-                <div class="brand-testimonial-card item">
+                <div class="col-lg-4 col-md-12">
+                    <div class="enquery-right-form">
+                        <div class="enquery-form-card" data-aos="fade-left" data-aos-delay="100">
+                            <div class="form-header">
+                                <h3 class="fw-bold text-white Session -white mb-1">Book Now</h3>
+                                <p class="text-white mb-0 small">Get one to one coaching with expert trainers.
+                                </p>
 
-                    <div class="quote-icon">
-                        <i class="fa-solid fa-quote-left"></i>
-                    </div>
+                            </div>
+                            <div class="form-body">
+                                <form id="trainingEnquiryForm">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control form-control-lg" placeholder="Your Name"
+                                            required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control form-control-lg"
+                                            placeholder="Your Email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="tel" class="form-control form-control-lg"
+                                            placeholder="Mobile Number" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <select class="form-select form-select-lg" required>
+                                            <option value="" selected disabled>Select Course</option>
+                                            <option value="aws-practitioner">AWS Cloud Practitioner</option>
+                                            <option value="aws-architect">AWS Solutions Architect</option>
+                                            <option value="aws-developer">AWS Developer Associate</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <textarea class="form-control form-control-lg" rows="3"
+                                            placeholder="Message"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn  training-hero-btn">Talk To Expert <i
+                                            class="fa fa-arrow-right ms-2"></i></button>
 
-                    <div class="testimonial-rating">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
+                            </div>
 
-                    <p class="testimonial-text">
-                        Excellent learning platform and flexible schedule.
-                        Recorded sessions and mentor support made the CISM
-                        preparation process very smooth and effective.
-                    </p>
-
-                    <div class="testimonial-user">
-
-                        <div class="user-image">
-                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="User">
                         </div>
-
-                        <div class="user-info">
-                            <h5>Sarah Williams</h5>
-                            <span>Security Manager • Canada</span>
-                        </div>
-
                     </div>
-
                 </div>
-
-                <!-- ITEM -->
-                <div class="brand-testimonial-card item">
-
-                    <div class="quote-icon">
-                        <i class="fa-solid fa-quote-left"></i>
-                    </div>
-
-                    <div class="testimonial-rating">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-
-                    <p class="testimonial-text">
-                        Their CRISC training included hands-on case studies,
-                        practice tests, and excellent exam guidance.
-                        Highly recommended for cybersecurity professionals.
-                    </p>
-
-                    <div class="testimonial-user">
-
-                        <div class="user-image">
-                            <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="User">
-                        </div>
-
-                        <div class="user-info">
-                            <h5>David Thompson</h5>
-                            <span>Risk Consultant • UK</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- ITEM -->
-                <div class="brand-testimonial-card item">
-
-                    <div class="quote-icon">
-                        <i class="fa-solid fa-quote-left"></i>
-                    </div>
-
-                    <div class="testimonial-rating">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-
-                    <p class="testimonial-text">
-                        I joined the AAISM certification program and loved the
-                        AI security modules. The course content was modern,
-                        industry-focused, and very engaging.
-                    </p>
-
-                    <div class="testimonial-user">
-
-                        <div class="user-image">
-                            <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="User">
-                        </div>
-
-                        <div class="user-info">
-                            <h5>Emily Roberts</h5>
-                            <span>Cybersecurity Analyst • Australia</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="faq">
-        <div class="container py-5">
 
 
-            <h2 class="section-heading mb-3">
-                Frequently Asked
-                <span class="highlight-text"> Questions</span>
-            </h2>
-            <div class="accordion" id="faqAccordion">
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Who should enroll in ISACA certification training?
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            ISACA certifications are ideal for IT professionals, cybersecurity
-                            specialists, auditors, risk managers, compliance professionals,
-                            and anyone looking to advance their career in IT governance,
-                            information security, or risk management.
-                        </div>
-                    </div>
-                </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Do you provide live classes and session recordings?
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Yes, we provide instructor-led live online training sessions along
-                            with recorded class access, so you can revisit lessons anytime
-                            for better understanding and exam preparation.
-                        </div>
-                    </div>
-                </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Is exam voucher assistance included with the training?
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Yes, we provide complete guidance for exam registration and voucher
-                            assistance. Selected training packages may also include discounted
-                            or bundled exam vouchers depending on the certification.
-                        </div>
-                    </div>
-                </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            Do you offer mock exams and certification support?
-                        </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Absolutely. Our training includes practice tests, mock exams,
-                            exam-focused study materials, and expert mentor support to help
-                            maximize your chances of passing on your first attempt.
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-        </div>
-    </section>
+
 
     <!-- =================== FOOTER SECTION ============== -->
     <footer class="site-footer py-5 position-relative overflow-hidden">

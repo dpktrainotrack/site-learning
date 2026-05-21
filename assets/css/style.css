@@ -7,15 +7,15 @@
 
 /* ---- CSS Variables ---- */
 :root {
-  --primary: #f7a000;
-  --primary-dark: #a74822;
+  --primary: #1790A8;
+  --primary-dark: #087f97;
   --accent: #8bffff;
   --light-bg: #F8F9FA;
   --dark-text: #212529;
   --gray-text: #545f68;
   --white: #ffffff;
-  --gradient-main: linear-gradient(135deg, #f7a000 0%, #a74822 100%);
-  --gradient-hero: linear-gradient(135deg, #0a2a3c 0%, #a74822 30%, #f7a000 60%, #a74822 100%);
+  --gradient-main: linear-gradient(135deg, #43D7CB 0%, #1790A8 100%);
+  --gradient-hero: linear-gradient(135deg, #0a2a3c 0%, #1790A8 30%, #43D7CB 60%, #1790A8 100%);
   --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
@@ -54,7 +54,7 @@ a {
 }
 
 ul {
-  list-style: none;
+  /* list-style: none; */
   margin: 0;
   padding: 0;
 }
@@ -4315,20 +4315,27 @@ section {
 
 /* --- Card Image --- */
 .na-card-img {
-  position: relative;
-  /* overflow: hidden; */
-  aspect-ratio: 16 / 9;
+  display: flex;
+  justify-content: center;
 }
 
 .na-card-img img {
   width: 100%;
-  height: 100%;
+  max-height: 100px;
   object-fit: cover;
   transition: transform 0.5s ease;
+  max-width: 170px;
+  border: 1px solid #d4d4d4;
+  border-radius: 20px 0 20px 0;
+  padding: 8px 6px
 }
 
 .na-card:hover .na-card-img img {
   transform: scale(1.08);
+}
+
+h5.traning-card-title {
+  color: #6f6e6e;
 }
 
 /* NEW badge */
@@ -4433,6 +4440,7 @@ section {
   padding: 18px 20px 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
   flex: 1;
 }
@@ -4492,7 +4500,7 @@ section {
   justify-content: space-between;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: auto;
+  /* margin-top: auto; */
   padding-top: 12px;
   border-top: 1px solid #f0f0f0;
 }

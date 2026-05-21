@@ -257,7 +257,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-
 });
 
 // Add keyframes for filtering animation dynamically
@@ -269,27 +268,6 @@ style.innerHTML = `
 }
 `;
 document.head.appendChild(style);
-
-$("#itTraningCourses").owlCarousel({
-  loop: true,
-  margin: 20,
-  nav: true,
-  dots: false,
-  autoplay: false,
-  // autoplaySpeed: 12000,
-  // smartSpeed: 12000,
-  // slideTransition: 'linear',
-  autoplayHoverPause: true,
-  navText: [
-    '<i class="fa-solid fa-arrow-left"></i>',
-    '<i class="fa-solid fa-arrow-right"></i>',
-  ],
-  responsive: {
-    0: { items: 1 },
-    600: { items: 2 },
-    1000: { items: 4 },
-  },
-});
 
 $(".testimonial-slider").owlCarousel({
   loop: true,
@@ -317,6 +295,25 @@ $(".voucher-slider").owlCarousel({
   margin: 30,
   nav: false,
   dots: false,
+  autoplay: false,
+  // autoplayTimeout: 1,
+  autoplaySpeed: 10000,
+  smartSpeed: 10000,
+  slideTransition: "linear",
+  autoplayHoverPause: false,
+  responsive: {
+    0: { items: 1 },
+    576: { items: 1 },
+    768: { items: 2 },
+    992: { items: 3 },
+    1200: { items: 4 },
+  },
+});
+$("#newArrivalCarousel").owlCarousel({
+  loop: true,
+  margin: 30,
+  nav: false,
+  dots: false,
   autoplay: true,
   // autoplayTimeout: 1,
   autoplaySpeed: 10000,
@@ -332,7 +329,7 @@ $(".voucher-slider").owlCarousel({
   },
 });
 
-$(".placement-carousel").owlCarousel({
+$("#brandsReview").owlCarousel({
   loop: true,
   margin: 20,
   autoplay: true,
@@ -342,7 +339,7 @@ $(".placement-carousel").owlCarousel({
   responsive: {
     0: { items: 1 },
     768: { items: 2 },
-    1000: { items: 3 },
+    1000: { items: 2 },
   },
 });
 
@@ -373,7 +370,7 @@ $(".certification-slider").owlCarousel({
   //   padding: 20,
   nav: true,
   dots: true,
-  autoplay: true,
+  autoplay: false,
   autoplayTimeout: 3500,
   smartSpeed: 800,
   responsive: {
