@@ -604,7 +604,7 @@
 
 
 .training-details-list li::before {
-    content: "\f00c";
+    content: "\f058";
     font-family: "Font Awesome 5 Free";
     color: var(--primary);
     font-weight: 900;
@@ -853,4 +853,323 @@ span.strip-value a {
 
 .icon-wrapper i {
     font-size: 27px;
+}
+
+ul {
+    list-style: none;
+}
+
+
+
+/* course-objective start */
+
+.course-objectives {
+    background: var(--light-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.course-objectives::before {
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: rgba(23, 144, 168, .08);
+    border-radius: 50%;
+    top: -120px;
+    right: -120px;
+}
+
+.objective-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(23, 144, 168, .12);
+    color: var(--primary);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--dark-text);
+}
+
+.section-title span {
+    background: var(--gradient-main);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-desc {
+    max-width: 700px;
+    margin: auto;
+    color: var(--gray-text);
+    font-size: 1.05rem;
+}
+
+.objective-card {
+    height: 100%;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 1px solid rgba(23, 144, 168, .08);
+}
+
+.objective-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-main);
+    transform: scaleX(0);
+    transition: .4s;
+}
+
+.objective-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.objective-card:hover::before {
+    transform: scaleX(1);
+}
+
+.icon-box {
+    width: 75px;
+    height: 75px;
+    border-radius: 20px;
+    background: var(--gradient-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--white);
+    font-size: 28px;
+    box-shadow: var(--shadow-md);
+}
+
+.objective-card h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 15px;
+}
+
+.objective-card p {
+    color: var(--gray-text);
+    margin: 0;
+    line-height: 1.7;
+}
+
+@media (max-width: 767px) {
+
+    .objective-card {
+        text-align: center;
+    }
+
+    .icon-box {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section-desc {
+        font-size: .95rem;
+    }
+}
+
+/* ======== Why-choose-us*/
+
+.why-choose-sla {
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.why-choose-sla::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgba(67, 215, 203, .08);
+    top: -250px;
+    right: -200px;
+}
+
+.why-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(23, 144, 168, .1);
+    color: var(--primary);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.why-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    color: var(--dark-text);
+    max-width: 850px;
+    margin: auto;
+}
+
+.why-title span {
+    background: var(--gradient-main);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.why-description {
+    max-width: 700px;
+    margin: auto;
+    color: var(--gray-text);
+    font-size: 1.05rem;
+}
+
+.why-feature {
+    display: flex;
+    gap: 20px;
+    padding: 22px;
+    background: var(--white);
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 1px solid rgba(23, 144, 168, .08);
+}
+
+.why-feature:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-md);
+}
+
+.feature-icon {
+    min-width: 70px;
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
+    background: var(--gradient-main);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.why-feature h5 {
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--dark-text);
+}
+
+.why-feature p {
+    margin: 0;
+    color: var(--gray-text);
+    line-height: 1.7;
+}
+
+.why-highlight-card {
+    background: var(--gradient-main);
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.why-highlight-card::before {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .1);
+    top: -120px;
+    right: -80px;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, .12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 18px;
+    text-align: center;
+    padding: 25px 15px;
+    height: 100%;
+    color: var(--white);
+}
+
+.stat-box i {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.stat-box h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.stat-box span {
+    font-size: .95rem;
+    opacity: .95;
+}
+
+.why-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    background: var(--white);
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.why-btn:hover {
+    transform: translateY(-3px);
+    color: var(--primary-dark);
+}
+
+@media(max-width:991px) {
+
+    .why-feature {
+        text-align: left;
+    }
+
+    .why-highlight-card {
+        margin-top: 20px;
+    }
+}
+
+@media(max-width:576px) {
+
+    .why-feature {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature-icon {
+        margin: auto;
+    }
+
+    .stat-box h3 {
+        font-size: 1.6rem;
+    }
+
+    .why-highlight-card {
+        padding: 25px;
+    }
 }

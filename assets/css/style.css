@@ -4317,11 +4317,12 @@ section {
 .na-card-img {
   display: flex;
   justify-content: center;
+  height: 140px;
 }
 
 .na-card-img img {
   width: 100%;
-  max-height: 100px;
+  max-height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
   max-width: 170px;
@@ -4767,4 +4768,56 @@ h5.traning-card-title {
   .search-voucher-box .search-icon {
     display: none;
   }
+}
+
+.contact-hero {
+  padding: 50px 0 50px;
+  background: var(--gradient-hero);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: .12;
+}
+
+.hero-shape-1 {
+  width: 320px;
+  height: 320px;
+  background: #fff;
+  top: -120px;
+  left: -120px;
+}
+
+.hero-shape-2 {
+  width: 220px;
+  height: 220px;
+  background: var(--accent);
+  right: -80px;
+  bottom: -80px;
+}
+
+.contact-hero-content {
+  text-align: center;
+  max-width: 850px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-hero-content h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 25px;
+  line-height: 1.15;
+}
+
+.contact-hero-content p {
+  color: rgba(255, 255, 255, .85);
+  line-height: 2;
+  font-size: 1.08rem;
+  margin-bottom: 0;
 }
