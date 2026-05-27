@@ -16,12 +16,151 @@
     --radius-sm: 8px;
 }
 
+.trail-info-strip {
+    background: #fff;
+    border-bottom: 1px solid #E2E8F0;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.trail-info-strip-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 0 20px;
+}
+
+.trail-strip-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 22px 30px;
+    transition: background 0.3s ease;
+}
+
+.trail-strip-item:hover {
+    background: var(--trail-surface);
+}
+
+.trail-strip-item>i {
+    font-size: 22px;
+    color: var(--trail-primary);
+    width: 36px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.strip-label {
+    display: block;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--trail-text-muted);
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.strip-value {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--trail-secondary);
+    line-height: 1;
+}
+
+.trail-strip-divider {
+    width: 1px;
+    height: 40px;
+    background: #E2E8F0;
+    flex-shrink: 0;
+}
+
+.trail-overview {
+    padding: 50px 0;
+    background: #fff;
+}
+
+.trail-overview-text {
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.trail-overview-highlights {
+    margin-top: 32px;
+}
+
+.trail-highlights-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--trail-secondary);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #E2E8F0;
+}
+
+.trail-highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.trail-highlight-item i {
+    color: var(--trail-primary);
+    font-size: 15px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.trail-requirements {
+    background: var(--trail-surface);
+    border-radius: var(--trail-radius);
+    padding: 24px 28px;
+    border-left: 4px solid var(--trail-primary);
+}
+
+.trail-req-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.trail-req-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 16px;
+    color: #475569;
+    padding: 8px 0;
+    border-bottom: 1px dashed #E2E8F0;
+}
+
+.trail-req-list li:last-child {
+    border-bottom: none;
+}
+
+.trail-req-list li i {
+    color: var(--trail-primary);
+    font-size: 12px;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
 /* ================== TRAINING HERO SECTION ================== */
 .training-hero-section {
     position: relative;
     padding: 40px 0;
     min-height: 70vh;
-    background: url('../images/traning/banners/banner2.jpg') no-repeat center center;
+    background: url('../images/traning/banners/banner4.jpg') no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -61,7 +200,7 @@
 .training-hero-section .hero-description {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: white;
 }
 
 .hero-content-card .stat-box {

@@ -4294,6 +4294,22 @@ section {
   display: none !important;
 }
 
+.new-arrival-carousel .owl-stage {
+  display: flex !important;
+}
+
+.new-arrival-carousel .owl-item {
+  display: flex !important;
+  height: auto !important;
+}
+
+.new-arrival-carousel .na-card-item {
+  display: flex !important;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
 /* --- Card --- */
 .na-card {
   background: var(--white);
@@ -4325,8 +4341,8 @@ section {
   max-height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
-  max-width: 170px;
-  border: 1px solid #d4d4d4;
+  max-width: 147px;
+  /* border: 1px solid #d4d4d4; */
   border-radius: 20px 0 20px 0;
   padding: 8px 6px
 }
